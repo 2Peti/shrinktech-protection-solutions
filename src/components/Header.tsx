@@ -1,42 +1,54 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-3xl font-black text-[#090D2F]">
               ShrinkTech<span className="text-[#F5821F]">®</span>
             </h1>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-[#F5821F] font-medium transition-colors">
-              Home
-            </a>
-            <a href="#flex-caps" className="text-gray-700 hover:text-[#F5821F] font-medium transition-colors">
-              STEC-F Flex Caps
-            </a>
-            <a href="#coatings" className="text-gray-700 hover:text-[#F5821F] font-medium transition-colors">
-              PVC Coatings
-            </a>
-            <a href="#contact" className="text-gray-700 hover:text-[#F5821F] font-medium transition-colors">
-              Contact
-            </a>
+            {['Home', 'STEC-F Flex Caps', 'PVC Coatings', 'Contact'].map((item, index) => {
+              const href = index === 0 ? '#home' : index === 1 ? '#flex-caps' : index === 2 ? '#coatings' : '#contact';
+              return (
+                <a 
+                  key={item}
+                  href={href} 
+                  className="relative text-gray-700 hover:text-[#F5821F] font-medium transition-colors py-2 group"
+                >
+                  {item}
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#F5821F] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                </a>
+              );
+            })}
           </nav>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-gray-900"
+              className="p-2 text-gray-700 hover:text-[#F5821F] transition-colors"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -45,36 +57,23 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <a
-                href="#home"
-                className="block px-3 py-2 text-gray-700 hover:text-[#F5821F] font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </a>
-              <a
-                href="#flex-caps"
-                className="block px-3 py-2 text-gray-700 hover:text-[#F5821F] font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                STEC-F Flex Caps
-              </a>
-              <a
-                href="#coatings"
-                className="block px-3 py-2 text-gray-700 hover:text-[#F5821F] font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                PVC Coatings
-              </a>
-              <a
-                href="#contact"
-                className="block px-3 py-2 text-gray-700 hover:text-[#F5821F] font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </a>
+          <div className="md:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200 rounded-b-2xl shadow-xl">
+            <div className="px-4 py-6 space-y-4">
+              {[
+                { title: 'Home', href: '#home' },
+                { title: 'STEC-F Flex Caps', href: '#flex-caps' },
+                { title: 'PVC Coatings', href: '#coatings' },
+                { title: 'Contact', href: '#contact' }
+              ].map((item) => (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  className="block px-4 py-3 text-gray-700 hover:text-[#F5821F] hover:bg-[#F5821F]/5 font-medium rounded-xl transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.title}
+                </a>
+              ))}
             </div>
           </div>
         )}

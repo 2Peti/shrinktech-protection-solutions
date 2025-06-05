@@ -15,7 +15,6 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simulate form submission
     console.log('Form submitted:', formData);
     
     toast({
@@ -23,7 +22,6 @@ const ContactSection = () => {
       description: "We'll get back to you within 24 hours with your custom quote.",
     });
 
-    // Reset form
     setFormData({
       name: '',
       email: '',
@@ -41,29 +39,36 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#090D2F] mb-6">
+    <section id="contact" className="py-24 bg-gradient-to-br from-[#090D2F] to-[#0F1340] relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#F5821F]/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#F5821F]/5 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-[#F5821F]/20 rounded-full text-[#F5821F] text-sm font-medium mb-6">
+              💬 Get In Touch
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
               Request a Quote or Custom Solution
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-xl text-gray-300 mb-8 font-light">
               Get in touch with our experts for customized PVC protection solutions
             </p>
-            <div className="bg-white p-6 rounded-lg shadow-sm inline-block">
-              <p className="text-sm text-gray-600 mb-2">Direct Email Contact:</p>
-              <a href="mailto:sales@shrinktech.com" className="text-xl font-semibold text-[#F5821F] hover:text-[#E5741C]">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 inline-block">
+              <p className="text-sm text-gray-300 mb-2">Direct Email Contact:</p>
+              <a href="mailto:sales@shrinktech.com" className="text-2xl font-bold text-[#F5821F] hover:text-white transition-colors">
                 sales@shrinktech.com
               </a>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 p-8 md:p-12">
+            <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-[#090D2F] mb-2">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-white">
                     Name *
                   </label>
                   <input
@@ -73,11 +78,12 @@ const ContactSection = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F5821F] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F5821F] focus:border-transparent backdrop-blur-sm transition-all"
+                    placeholder="Your name"
                   />
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-[#090D2F] mb-2">
+                <div className="space-y-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-white">
                     Email *
                   </label>
                   <input
@@ -87,13 +93,14 @@ const ContactSection = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F5821F] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F5821F] focus:border-transparent backdrop-blur-sm transition-all"
+                    placeholder="your@email.com"
                   />
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-[#090D2F] mb-2">
+              <div className="space-y-2">
+                <label htmlFor="company" className="block text-sm font-semibold text-white">
                   Company
                 </label>
                 <input
@@ -102,12 +109,13 @@ const ContactSection = () => {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F5821F] focus:border-transparent"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F5821F] focus:border-transparent backdrop-blur-sm transition-all"
+                  placeholder="Your company name"
                 />
               </div>
 
-              <div>
-                <label htmlFor="productInterest" className="block text-sm font-medium text-[#090D2F] mb-2">
+              <div className="space-y-2">
+                <label htmlFor="productInterest" className="block text-sm font-semibold text-white">
                   Product Interest
                 </label>
                 <select
@@ -115,18 +123,18 @@ const ContactSection = () => {
                   name="productInterest"
                   value={formData.productInterest}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F5821F] focus:border-transparent bg-white"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#F5821F] focus:border-transparent backdrop-blur-sm transition-all"
                 >
-                  <option value="">Select a product...</option>
-                  <option value="STEC-F">STEC-F Flex Caps</option>
-                  <option value="Coatings">PVC Coatings</option>
-                  <option value="Custom Cap">Custom Cap Solution</option>
-                  <option value="Other">Other</option>
+                  <option value="" className="bg-[#090D2F] text-white">Select a product...</option>
+                  <option value="STEC-F" className="bg-[#090D2F] text-white">STEC-F Flex Caps</option>
+                  <option value="Coatings" className="bg-[#090D2F] text-white">PVC Coatings</option>
+                  <option value="Custom Cap" className="bg-[#090D2F] text-white">Custom Cap Solution</option>
+                  <option value="Other" className="bg-[#090D2F] text-white">Other</option>
                 </select>
               </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-[#090D2F] mb-2">
+              <div className="space-y-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-white">
                   Message *
                 </label>
                 <textarea
@@ -137,13 +145,13 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Please describe your requirements, quantities needed, specifications, etc."
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F5821F] focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F5821F] focus:border-transparent backdrop-blur-sm resize-none transition-all"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#F5821F] text-white py-3 px-6 rounded-md hover:bg-[#E5741C] transition-colors font-semibold text-lg"
+                className="w-full bg-gradient-to-r from-[#F5821F] to-[#E5741C] text-white py-4 px-8 rounded-xl hover:from-[#E5741C] hover:to-[#D4661A] transition-all duration-300 font-bold text-lg shadow-lg shadow-[#F5821F]/25 hover:shadow-xl hover:shadow-[#F5821F]/40 hover:-translate-y-1"
               >
                 Submit Quote Request
               </button>
