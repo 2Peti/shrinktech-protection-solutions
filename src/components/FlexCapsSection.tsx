@@ -35,7 +35,7 @@ const FlexCapsSection = () => {
     <section id="flex-caps" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#090D2F] mb-6">
             STEC-F Soft PVC Insulating Flex Caps
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
@@ -47,52 +47,52 @@ const FlexCapsSection = () => {
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Material</h4>
+            <h4 className="font-semibold text-[#090D2F] mb-2">Material</h4>
             <p className="text-gray-600">PVC, Shore A 40–90</p>
           </div>
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Colors</h4>
+            <h4 className="font-semibold text-[#090D2F] mb-2">Colors</h4>
             <p className="text-gray-600">Black or grey standard; custom RAL colors available</p>
           </div>
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Temperature Range</h4>
+            <h4 className="font-semibold text-[#090D2F] mb-2">Temperature Range</h4>
             <p className="text-gray-600">-25°C to +75°C</p>
           </div>
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Compliance</h4>
+            <h4 className="font-semibold text-[#090D2F] mb-2">Compliance</h4>
             <p className="text-gray-600">UV Stabilized, RoHS, and REACH compliant</p>
           </div>
         </div>
 
         {/* Features List */}
-        <div className="bg-red-50 p-8 rounded-lg mb-12">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">Key Features</h3>
+        <div className="bg-[#F5821F]/10 p-8 rounded-lg mb-12 border border-[#F5821F]/20">
+          <h3 className="text-xl font-bold text-[#090D2F] mb-4">Key Features</h3>
           <div className="grid md:grid-cols-2 gap-4">
             <ul className="space-y-2">
               <li className="flex items-start">
-                <span className="text-red-600 mr-2">•</span>
+                <span className="text-[#F5821F] mr-2">•</span>
                 Available in nearly every diameter, length, and wall thickness
               </li>
               <li className="flex items-start">
-                <span className="text-red-600 mr-2">•</span>
+                <span className="text-[#F5821F] mr-2">•</span>
                 Custom shapes and tooling available on request
               </li>
               <li className="flex items-start">
-                <span className="text-red-600 mr-2">•</span>
+                <span className="text-[#F5821F] mr-2">•</span>
                 Environmentally friendly
               </li>
             </ul>
             <ul className="space-y-2">
               <li className="flex items-start">
-                <span className="text-red-600 mr-2">•</span>
+                <span className="text-[#F5821F] mr-2">•</span>
                 Packaging: Bag format
               </li>
               <li className="flex items-start">
-                <span className="text-red-600 mr-2">•</span>
+                <span className="text-[#F5821F] mr-2">•</span>
                 Flexible and durable protection
               </li>
               <li className="flex items-start">
-                <span className="text-red-600 mr-2">•</span>
+                <span className="text-[#F5821F] mr-2">•</span>
                 Suitable for automotive and electronics
               </li>
             </ul>
@@ -102,13 +102,13 @@ const FlexCapsSection = () => {
         {/* Specifications Table */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="p-6 border-b">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Dimension Specifications</h3>
+            <h3 className="text-xl font-bold text-[#090D2F] mb-4">Dimension Specifications</h3>
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
               <input
                 type="text"
                 placeholder="Search by article number or ID..."
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F5821F] focus:border-transparent"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -117,19 +117,19 @@ const FlexCapsSection = () => {
           
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-gray-50">
+              <thead className="bg-[#090D2F]">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Article No.</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID (mm)</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Wall Thickness (W ±20%)</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Length (mm ±2)</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">MOQ (pcs)</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Article No.</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">ID (mm)</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Wall Thickness (W ±20%)</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Length (mm ±2)</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">MOQ (pcs)</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {filteredData.map((item, index) => (
                   <tr key={item.articleNo} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.articleNo}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#090D2F]">{item.articleNo}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.id}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.wallThickness}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.length}</td>

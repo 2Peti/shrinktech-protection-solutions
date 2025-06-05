@@ -12,22 +12,22 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="text-2xl font-bold text-gray-900">
-              ShrinkTech<span className="text-red-600">®</span>
+              ShrinkTech<span className="text-[#F5821F]">®</span>
             </h1>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+            <a href="#home" className="text-gray-700 hover:text-[#F5821F] font-medium transition-colors">
               Home
             </a>
-            <a href="#flex-caps" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+            <a href="#flex-caps" className="text-gray-700 hover:text-[#F5821F] font-medium transition-colors">
               STEC-F Flex Caps
             </a>
-            <a href="#coatings" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+            <a href="#coatings" className="text-gray-700 hover:text-[#F5821F] font-medium transition-colors">
               PVC Coatings
             </a>
-            <a href="#contact" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+            <a href="#contact" className="text-gray-700 hover:text-[#F5821F] font-medium transition-colors">
               Contact
             </a>
           </nav>
@@ -49,28 +49,28 @@ const Header = () => {
             <div className="px-2 pt-2 pb-3 space-y-1">
               <a
                 href="#home"
-                className="block px-3 py-2 text-gray-700 hover:text-red-600 font-medium"
+                className="block px-3 py-2 text-gray-700 hover:text-[#F5821F] font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </a>
               <a
                 href="#flex-caps"
-                className="block px-3 py-2 text-gray-700 hover:text-red-600 font-medium"
+                className="block px-3 py-2 text-gray-700 hover:text-[#F5821F] font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 STEC-F Flex Caps
               </a>
               <a
                 href="#coatings"
-                className="block px-3 py-2 text-gray-700 hover:text-red-600 font-medium"
+                className="block px-3 py-2 text-gray-700 hover:text-[#F5821F] font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 PVC Coatings
               </a>
               <a
                 href="#contact"
-                className="block px-3 py-2 text-gray-700 hover:text-red-600 font-medium"
+                className="block px-3 py-2 text-gray-700 hover:text-[#F5821F] font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
