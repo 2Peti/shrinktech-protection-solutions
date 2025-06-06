@@ -56,14 +56,6 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-[#F5821F]/20 to-[#090D2F]/20 rounded-3xl blur-xl"></div>
-            <img 
-              src="/lovable-uploads/8b9ed14b-e1cb-4f85-9c4a-7c7ae1f35e90.png" 
-              alt="ShrinkTech PVC Products" 
-              className="relative w-full h-auto rounded-3xl shadow-2xl"
-            />
-          </div>
         </div>
       </div>
     </section>
